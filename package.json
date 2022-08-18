@@ -1,0 +1,40 @@
+{
+  "name": "nasa_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm start --prefix client",
+    "server": "npm run watch --prefix server",
+    "watch": "concurrently \"npm run client\" \"npm run server\"",
+    "install-client": "npm install --prefix client",
+    "install-server": "npm install --prefix server",
+    "install": "npm run install-client && npm run install-server",
+    "audit-client": "npm audit --prefix client",
+    "audit-server": "npm audit --prefix server",
+    "audit": "npm run audit-client & npm run audit-server",
+    "audit-fix": "npm audit fix --force --prefix client & npm audit fix --force --prefix server",
+    "deploy": "npm run build --prefix client && npm start --prefix server",
+    "deploy-watch": "npm run build --prefix client && npm run server",
+    "test-client": "npm test --prefix client",
+    "test-server": "npm test --prefix server",
+    "test": "npm run test-client & npm run test-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "prettier": "^2.7.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
